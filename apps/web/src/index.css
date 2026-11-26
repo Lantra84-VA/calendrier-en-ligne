@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Scan the components explicitly: when the demo entry builds with root = demo/, automatic
+ * detection stops at demo/ and every class used in src/ would be missing from the CSS. */
+@source "../src";
+
 @layer base {
   html,
   body {
