@@ -86,6 +86,8 @@ export default defineConfig(async ({ mode }) => ({
       // to a browser that accepts them: `node .output/server/index.mjs` compresses nothing on the
       // fly, so without them a page's JS and CSS cross the wire uncompressed.
       compressPublicAssets: { brotli: true, gzip: true },
+      // Scan `apps/web/server/` (default off in Nitro 3), where the API-proxy middleware lives.
+      serverDir: true,
     }),
     viteReact({ compiler: true }),
     ...(await contributedPlugins()),
